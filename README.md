@@ -1,15 +1,12 @@
-# ChatBot
+# Video Chatter
 
 ## Name
 
-Streamlit Bedrock Chat application
+Video Chatter
 
 ## Description
 
-The application will first ask the user to enter a youtube video url.
-The bot will summarize the transcript in the youtube video.
-Then the user can ask further questions about the transcript in the video.
-The bot will answer the questions.
+I summarize Youtube videos and make them conversational 
 
 ## Installation
 
