@@ -20,13 +20,13 @@ retry_config = Config(
 
 
 def bedrock_chain():
-    #profile = "default"
-    aws_access_key_id = st.secrets["aws_access_key_id"]
-    aws_secret_access_key = st.secrets["aws_secret_access_key"]
+    ACCESS_KEY = st.secrets["ACCESS_KEY"]
+    SECRET_KEY = st.secrets["SECRET_KEY"]
     session = boto3.Session(
-        aws_access_key_id=aws_access_key_id,
-        aws_secret_access_key=aws_secret_access_key
+        aws_access_key_id=ACCESS_KEY,
+        aws_secret_access_key=SECRET_KEY
     )
+
     
     bedrock_runtime = session.client("bedrock-runtime", config=retry_config)
        
