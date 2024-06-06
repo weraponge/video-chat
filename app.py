@@ -19,9 +19,9 @@ if "llm_chain" not in st.session_state:
 
 if "questions" not in st.session_state:
     st.session_state.questions = []
-    input_label = "Enter the youtube url to summarize"
+    input_label = "📺 Enter a Youtube Video URL to Summarize "
 else:
-    input_label = "Need more details? you can ask here"
+    input_label = "❗Ask me here if you need More Details.❗" 
 
 if "answers" not in st.session_state:
     st.session_state.answers = []
@@ -33,11 +33,12 @@ if "input" not in st.session_state:
 def write_top_bar():
     col1, col2, col3 = st.columns([2, 10, 3])
     with col2:
-        header = "Video Chatter"
+        header = "Video Chatter 💬 "
         st.write(f"<h3 class='main-header'>{header}</h3>", unsafe_allow_html=True)
         description = """
-        I summarize and make Youtube videos conversational.
-        <br>
+        I summarize and make Youtube videos conversational 
+        
+        
        
         """
         st.write(f"<p class=''>{description}", unsafe_allow_html=True)
@@ -65,7 +66,6 @@ def handle_input():
     question = input
 
     if len(st.session_state.questions)==0:
-        # Get video id from youtube url eg: https://www.youtube.com/watch?v=kNrvc0hkPuE
         video_id = utility.get_video_id_from_url(input)
 
         # Get transcript from youtube video
@@ -118,6 +118,7 @@ with st.container():
 
 
 st.markdown("---")
+
 input = st.text_input(
     input_label, key="input", on_change=handle_input
 )
