@@ -36,14 +36,14 @@ def write_top_bar():
         header = "Video Chatter 💬 "
         st.write(f"<h3 class='main-header'>{header}</h3>", unsafe_allow_html=True)
         description = """
-        I summarize and make Youtube videos conversational 
+        I Summarize and Make Long Youtube Videos Conversational❗
         
         
        
         """
         st.write(f"<p class=''>{description}", unsafe_allow_html=True)
     with col3:
-        clear = st.button("Start over")
+        clear = st.button("Start Over")
 
     return clear
 
