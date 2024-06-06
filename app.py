@@ -37,8 +37,7 @@ def write_top_bar():
         st.write(f"<h3 class='main-header'>{header}</h3>", unsafe_allow_html=True)
         description = """
         I Summarize and Make Long Youtube Videos Conversational❗
-        
-        
+            
        
         """
         st.write(f"<p class=''>{description}", unsafe_allow_html=True)
@@ -121,4 +120,19 @@ st.markdown("---")
 
 input = st.text_input(
     input_label, key="input", on_change=handle_input
+)
+
+st.markdown(
+    """
+    <style>
+        .small-font {
+            font-size: 12px;
+        }
+    </style>
+    <div style='position: fixed; bottom: 0; right: 0;'>
+        <p class="small-font">For feedback: @ekhiyami</p>
+    </div>
+    
+    """,
+    unsafe_allow_html=True
 )
