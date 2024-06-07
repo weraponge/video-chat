@@ -21,7 +21,7 @@ if "questions" not in st.session_state:
     st.session_state.questions = []
     input_label = "📺 Enter a Youtube Video URL to Summarize "
 else:
-    input_label = "❗Ask me here if you need More Details.❗" 
+    input_label = "❗Ask Me Here If You Need More Details.❗" 
 
 if "answers" not in st.session_state:
     st.session_state.answers = []
@@ -129,8 +129,9 @@ st.markdown(
             font-size: 12px;
         }
     </style>
-    <div style='position: fixed; bottom: 0; right: 0;'>
-        <p class="small-font">For feedback: @ekhiyami</p>
+    <div style='position: fixed; bottom: 0; left: 0;'>
+        <p class="small-font">Feedback: @ekhiyami</p>
+        <p class="small-font"> This app doesn't represent my employer</p>
     </div>
     
     """,
