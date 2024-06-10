@@ -1,16 +1,22 @@
 # Video Chatter
 
-## Name
 
-Video Chatter
 
-## Description
+This app summarizes Youtube videos and make them conversational 
 
-I summarize Youtube videos and make them conversational 
+### The architecture
 
-## Installation
+![alt text](video-chat-arch.png)
 
-Steps to install the application
+1. A user enters a YouTube video URL to summarize.
+2. The Streamlit app takes the URL, parses it to get the video ID, and calls the YouTube API to get the video transcript.
+3. The app builds a prompt from the transcript and passes it to Bedrock for summarization using a predefined model.
+4. Bedrock summarizes the transcript based on the generated prompt and returns the summary to the user.
+5. If users have follow-up questions, the app builds a conversation memory using Langchain and answers follow-up questions based on content from the original transcript.
+
+
+### Installation
+
 
 1. Clone the repo
    ```sh
