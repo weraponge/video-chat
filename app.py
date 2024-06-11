@@ -70,7 +70,7 @@ def handle_input():
         # Get transcript from youtube video
         transcript = utility.get_transcript(video_id)
         if not transcript:
-            st.error("The video you provided has no transcript. 💔 Sorry Ican't help here.💔")
+            st.error("The video provided has no English transcript. 💔 Sorry I can't help here.💔")
             st.session_state.input = ""
             return None
 
