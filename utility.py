@@ -22,7 +22,12 @@ def get_video_id_from_url(youtube_url):
 def get_transcript(video_id):
     logger.info("Inside get_transcript ..")
 
-    transcript = YouTubeTranscriptApi.get_transcript(video_id)
+    try:
+        transcript = YouTubeTranscriptApi.get_transcript(video_id)
+    except Exception as e:
+        transcript = None
+        logger.info("This video doesn't come with transcript. 💔Sorry can't help here.💔 ", e)
+
     logger.info("transcript")
     logger.info(transcript)
     return transcript

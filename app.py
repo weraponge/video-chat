@@ -69,9 +69,15 @@ def handle_input():
 
         # Get transcript from youtube video
         transcript = utility.get_transcript(video_id)
+        if not transcript:
+            st.error("The video you provided has no transcript. 💔 Sorry Ican't help here.💔")
+            st.session_state.input = ""
+            return None
+
 
         # Generate prompt from transcript
         input = utility.generate_prompt_from_transcript(transcript)
+        
         
     result = chain.run_chain(llm_chain, input)
 
