@@ -28,24 +28,27 @@ This app summarizes YouTube videos and makes them conversational.
 
 >The code as is works on Streamlit. If you like to change it to work on your local environment, follow steps 4, 5, and 6. Otherwise, jump directly to step 7.
 
- 4. **Create .aws folder in the roots**
+4. **Create .aws folder in the roots**
+   ```sh
+   mkdir .aws
 
- 5.**Move to .aws directory**  
-      ```sh
-      cd .aws
- 6. **Create credentials.ini file and add AWS credentials in the file**
-      ```sh
-      ACCESS_KEY=<Your AWS access key>
-      SECRET_KEY=<Your AWS secret access key>
+5. **Move to .aws directory**  
+   ```sh
+   cd .aws
 
- 7. **Change lines 23 and 24 in bedrock.py to read the secrets from your local environment**
-      ```sh
-      ACCESS_KEY = os.getenv("ACCESS_KEY")
-      SECRET_KEY = os.getenv("SECRET_KEY")
+6. **Create credentials.ini file and add AWS credentials in the file**
+    ```sh
+   ACCESS_KEY=<Your AWS access key>
+   SECRET_KEY=<Your AWS secret access key>
 
- 8. d**From root folder, run the following command to run the application in the browser**
-      ```sh
-      streamlit run app.py
+7. **Change lines 23 and 24 in bedrock.py to read the secrets from your local environment**
+   ```sh
+   ACCESS_KEY = os.getenv("ACCESS_KEY")
+   SECRET_KEY = os.getenv("SECRET_KEY")
+
+8. **From root folder, run the following command to run the application in the browser**
+   ```sh
+   streamlit run app.py
 
 
 
