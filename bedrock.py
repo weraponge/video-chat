@@ -45,7 +45,7 @@ def bedrock_chain():
     
     prompt_template = """System: The following is a conversation between a knowledgeable helpful assistant and a customer.
     The customer will provide a transcript.
-    First the assistant will summarize the transcript.
+    First the assistant will provide a comprehensive summarize the transcript.
     Then the customer will be asking further questions on the transcript and assistant will answer it.
     The assistant provides specific details from the transcript when user asked.
     The assistant will give brief reply to asked questions only.

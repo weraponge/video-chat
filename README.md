@@ -1,12 +1,10 @@
 # Video Chatter
 
+This app summarizes YouTube videos and makes them conversational.
 
+### The Architecture
 
-This app summarizes Youtube videos and make them conversational 
-
-### The architecture
-
-![alt text](video-chat-arch.png)
+![Video Chat Architecture](video-chat-arch.png)
 
 1. A user enters a YouTube video URL to summarize.
 2. The Streamlit app takes the URL, parses it to get the video ID, and calls the YouTube API to get the video transcript.
@@ -14,42 +12,50 @@ This app summarizes Youtube videos and make them conversational
 4. Bedrock summarizes the transcript based on the generated prompt and returns the summary to the user.
 5. If users have follow-up questions, the app builds a conversation memory using Langchain and answers follow-up questions based on content from the original transcript.
 
-
 ### Installation
 
+1. **Clone the repo**
+   ```sh
+   git clone https://github.com/ekhiyami/video-chat.git
 
-1. Clone the repo
+2. **Move to root directory**
    ```sh
-   git clone git@gitlab.com:subinvs/chatbot.git
-   ```
-2. Move to root directory
-   ```sh
-   cd chatbot
-   ```
-3. Install packages
-   ```sh
-   pip install -r reuirements.txt
-   ```
-4. Create .aws folder in the root
-5. Move to .aws directory
-   ```sh
-   cd .aws
-   ```
-6. Create credentials.ini file and add AWS credentials in the file
-   ```sh
-   [default]
-   aws_access_key_id=<Access key>
-   aws_secret_access_key=<Secret access key>
-   ```
-7. From root folder run the following command to run the application in browser
-   ```sh
-   streamlit run app.py
-   ```
-### Security
+   cd video-chat
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+3. **Install requirements**
+   ```sh
+   pip install -r requirements.txt
 
-### License
+>The code as is works on Streamlit. If you like to change it to work on your local environment, follow steps 4, 5, and 6. Otherwise, jump directly to step 7.
 
-This library is licensed under the MIT-0 License. See the LICENSE file.
+ 4. **Create .aws folder in the roots**
+
+ 5.**Move to .aws directory**  
+      ```sh
+      cd .aws
+ 6. **Create credentials.ini file and add AWS credentials in the file**
+      ```sh
+      ACCESS_KEY=<Your AWS access key>
+      SECRET_KEY=<Your AWS secret access key>
+
+ 7. **Change lines 23 and 24 in bedrock.py to read the secrets from your local environment**
+      ```sh
+      ACCESS_KEY = os.getenv("ACCESS_KEY")
+      SECRET_KEY = os.getenv("SECRET_KEY")
+
+ 8. d**From root folder, run the following command to run the application in the browser**
+      ```sh
+      streamlit run app.py
+
+
+
+
+
+1. **Change lines 23 and 24 in bedrock.py to read the secrets from your local environment** 
+   ```sh
+   ACCESS_KEY=<Your AWS access key>
+SECRET_KEY=<Your AWS secret access key>
+
+1. **From root folder, run the following command to run the application in the browser**
+   ```sh
 
