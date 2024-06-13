@@ -42,7 +42,7 @@ def bedrock_chain():
         model_kwargs=model_kwargs,
     )
     
-    prompt_template = """System: System: The following is a video transcript. I want you to provide a comprehensive summary of this text and then list the key points. The entire summary should be around 400 word. 
+    prompt_template = """System: I want you to provide a comprehensive summary of this text provided, and then list the key points. Finally, write a short conclusion about what the video is about.
 
     Current conversation:
     {history}
