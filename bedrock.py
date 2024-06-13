@@ -2,11 +2,9 @@ import boto3
 from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
-# from langchain_core.output_parsers import StrOutputParser
-# from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_community.chat_models import BedrockChat
 import streamlit as st
-# from langchain_core.messages import HumanMessage, SystemMessage
+
 
 
 from botocore.config import Config
@@ -27,11 +25,12 @@ def bedrock_chain():
         aws_secret_access_key=SECRET_KEY
     )
     
+ 
     bedrock_runtime = session.client("bedrock-runtime", config=retry_config)
        
     model_id = "anthropic.claude-3-sonnet-20240229-v1:0"
     model_kwargs =  { 
-        "max_tokens": 2048,  # Claude-3 use “max_tokens” However Claud-2 requires “max_tokens_to_sample”.
+        "max_tokens": 2048,  
         "temperature": 0.0,
         "top_k": 250,
         "top_p": 1,
@@ -43,12 +42,7 @@ def bedrock_chain():
         model_kwargs=model_kwargs,
     )
     
-    prompt_template = """System: The following is a conversation between a knowledgeable helpful assistant and a customer.
-    The customer will provide a transcript.
-    First the assistant will provide a comprehensive summarize the transcript.
-    Then the customer will be asking further questions on the transcript and assistant will answer it.
-    The assistant provides specific details from the transcript when user asked.
-    The assistant will give brief reply to asked questions only.
+    prompt_template = """System: System: The following is a video transcript. I want you to provide a comprehensive summary of this text and then list the key points. The entire summary should be around 400 word. 
 
     Current conversation:
     {history}

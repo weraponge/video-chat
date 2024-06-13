@@ -7,6 +7,8 @@ import streamlit as st
 USER_ICON = "images/user-icon.png"
 AI_ICON = "images/bedrock.png"
 
+
+
 if "user_id" in st.session_state:
     user_id = st.session_state["user_id"]
 else:
@@ -20,6 +22,7 @@ if "llm_chain" not in st.session_state:
 if "questions" not in st.session_state:
     st.session_state.questions = []
     input_label = "📺 Enter a Youtube Video URL to Summarize "
+    
 else:
     input_label = "❗Ask Me Here If You Need More Details.❗" 
 
@@ -114,6 +117,8 @@ def write_chat_message(md):
     chat = st.container()
     with chat:
         render_answer(md["answer"])
+
+
 
 
 with st.container():

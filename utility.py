@@ -1,4 +1,5 @@
 import logging
+
 from youtube_transcript_api import YouTubeTranscriptApi
 
 logger = logging.getLogger()
@@ -42,3 +43,9 @@ def generate_prompt_from_transcript(transcript):
     logger.info("prompt")
     logger.info(prompt)
     return prompt
+
+
+
+
+
+
